@@ -1,0 +1,214 @@
+FARES CHEHIDI
+Backend Developer Python | ML Engineer
+
+Email: fareschehidi7@gmail.com
+Téléphone: +33 7 87 86 40 41
+LinkedIn: https://www.linkedin.com/in/fares-chehidi
+GitHub: https://github.com/FCHEHIDI
+
+================================================================================
+PROFIL PROFESSIONNEL
+================================================================================
+
+Backend developer Python spécialisé en optimisation de systèmes et Machine Learning. Formé en linguistique et logique des prédicats. Expertise en architecture distribuée, APIs REST, bases de données et MLOps. Dernier projet : système de diarization vocale temps réel (PyTorch/FastAPI + serveur Rust Axum/Tokio). Passionné par l'architecture de systèmes distribués et les projets à impact technologique ou social.
+
+================================================================================
+COMPÉTENCES TECHNIQUES
+================================================================================
+
+LANGAGES DE PROGRAMMATION
+- Expert: Python
+- Avancé: Rust, C#, SQL
+- Intermédiaire: TypeScript, Java, R
+
+BACKEND & API
+FastAPI, ASP.NET Core, SQLAlchemy, Entity Framework, REST API, JWT, OAuth, Microservices
+
+BASES DE DONNÉES
+PostgreSQL, SQL Server, SQLite, PLpgSQL, Optimisation de requêtes, Indexation, Migrations
+
+MACHINE LEARNING & IA
+PyTorch, TensorFlow, Scikit-learn, ONNX, LangChain, RAG, Transformers, Medical AI, MLOps
+
+DEVOPS & INFRASTRUCTURE
+Docker, Docker Compose, Redis, Elasticsearch, CI/CD, Kubernetes
+
+ARCHITECTURE & DESIGN PATTERNS
+Systèmes distribués, Microservices, SOLID, Design Patterns, OOP, Architecture ML, Event-driven
+
+PERFORMANCE & OPTIMISATION
+Algorithmes avancés, Analyse de complexité, Programmation concurrente, Async/Await, Profiling
+
+OUTILS & MÉTHODOLOGIES
+Git, GitHub, MERISE (MCD/MLD), Power BI, Jupyter, Testing (pytest, unittest), Agile, TDD
+
+================================================================================
+EXPÉRIENCE PROFESSIONNELLE
+================================================================================
+
+DÉVELOPPEUR BACKEND PYTHON | Indépendant
+Janvier 2025 - Présent | Remote
+
+Projets & Réalisations:
+
+• VoiceFlow Intelligence Platform
+  - Architecture ML complète pour diarization vocale temps réel
+  - Développement avec PyTorch et FastAPI pour le pipeline ML
+  - Serveur d'inférence haute performance en Rust (Axum/Tokio)
+  - Pipeline MLOps production-ready avec conversion PyTorch vers ONNX
+  - Optimisation latence streaming audio < 100ms
+  - Technologies: Python, Rust, PyTorch, FastAPI, ONNX, Axum, Tokio
+
+• API Internal Tools Management
+  - Conception et développement API REST pour gestion d'outils internes
+  - Architecture microservices avec découplage des services
+  - Base de données PostgreSQL avec procédures stockées avancées (PLpgSQL)
+  - Dashboard frontend React/TypeScript avec monitoring temps réel
+  - Technologies: PostgreSQL, PLpgSQL, REST API, React, TypeScript
+
+• APIs Development with FastAPI
+  - Développement API REST professionnelle avec authentification JWT
+  - Implémentation SQLAlchemy ORM avec gestion avancée des relations
+  - Système de contrôle d'accès basé sur les rôles (RBAC)
+  - Suite complète de tests automatisés (pytest)
+  - Documentation OpenAPI/Swagger automatique
+  - Technologies: Python, FastAPI, SQLAlchemy, JWT, PostgreSQL
+
+• Load Balancer Analytics at Hyperscale
+  - Plateforme d'observabilité pour load balancer niveau entreprise
+  - Système de prédiction ML pour tentatives de retry
+  - Analytics en temps réel avec traitement de métriques haute fréquence
+  - Intégration SQL Server et création dashboards Power BI
+  - Gestion du trafic haute échelle avec optimisation performances
+  - Technologies: Python, SQL Server, Machine Learning, Power BI, Analytics
+
+• LogiTrack Backend
+  - API ASP.NET Core production-ready pour gestion inventory et commandes
+  - Entity Framework Core avec système de migrations automatisées
+  - Authentification JWT et autorisation basée sur les rôles
+  - Architecture RESTful avec best practices
+  - Technologies: C#, ASP.NET Core, Entity Framework, JWT
+
+INGÉNIEUR MACHINE LEARNING | Indépendant
+Janvier 2025 - Présent | Remote
+
+Projets & Réalisations:
+
+• Medical RAG Chatbot
+  - Développement chatbot médical production-ready avec RAG
+  - Retrieval-Augmented Generation pour réponses contextuelles
+  - Intégration LLM local et bases de données vectorielles
+  - Architecture optimisée pour inférences médicales
+  - Pipeline de preprocessing et validation des données médicales
+  - Technologies: Python, LangChain, Vector Databases, Transformers
+
+• BiostatisticsModeling
+  - Sélection de features pour IA médicale (cancer du sein, maladies cardiaques)
+  - Tests statistiques avancés: RFE-CV, LASSO, régression
+  - Pont entre significativité statistique et pertinence clinique
+  - Analyse de données biomédicales avec validation croisée
+  - Technologies: Python, Scikit-learn, Pandas, NumPy, Statistical Analysis
+
+• Medical AI Classification System & CT Scans Recognition
+  - Système de classification IA pour diagnostics médicaux
+  - Reconnaissance d'images médicales (scans CT pancréas)
+  - Deep Learning avec CNN pour détection précoce
+  - Pipeline ML complet avec preprocessing, training et validation
+  - Optimisation des modèles pour déploiement production
+  - Technologies: Python, PyTorch, TensorFlow, CNN, Medical Imaging, Scikit-learn
+
+DIRECTEUR D'HÔTEL 2★ | Hôtel Donjon Vincennes
+2020 - 2025 | Vincennes, Paris
+
+- Digitalisation complète de l'établissement pendant la crise COVID-19
+- Refonte totale du site web avec système de réservation en ligne
+- Implémentation sécurité PCI DSS pour paiements en ligne
+- Gestion infrastructure IT et maintenance serveurs
+- Optimisation budgétaire et gestion d'équipe pluridisciplinaire
+- Management opérationnel et stratégique
+- Compétences techniques acquises: Infrastructure IT, Sécurité web, Gestion de projet
+
+PROFESSEUR DE FRANÇAIS | Ministère de l'Éducation Nationale
+2015 - 2019 | Enseignement secondaire
+
+- Conception et développement de programmes pédagogiques structurés
+- Adaptation pédagogique pour profils particuliers (dysphasie, dyslexie, DIS)
+- Planification méthodique et évaluation continue des apprentissages
+- Formation et accompagnement personnalisé des élèves
+- Compétences transférables: Algorithmique pédagogique, Communication, Rigueur méthodologique
+
+================================================================================
+PROJETS TECHNIQUES COMPLÉMENTAIRES
+================================================================================
+
+• DevOps Docker Debugger
+  - Challenge complet de debugging Docker Compose
+  - 62 bugs corrigés avec documentation exhaustive
+  - 378+ tests automatisés
+  - Environnements: WordPress, Nextcloud, Mattermost
+  - Technologies: Docker, Docker Compose, Shell scripting
+
+• Algorithmic Design
+  - Évolution 3-versions avec architecture OOP avancée
+  - Implémentation principes SOLID
+  - Système d'exécution concurrente optimisé
+  - Design patterns et best practices
+  - Technologies: Python, C#, OOP
+
+• Refactoring Multi-langages
+  - Démonstration expertise refactoring
+  - Python, Java, TypeScript
+  - Application des best practices et clean code
+  - Optimisation performances et maintenabilité
+
+• ModelisationSQLite3
+  - Méthodologie MERISE complète (MCD/MLD)
+  - Implémentation contraintes d'intégrité avancées
+  - Développement triggers et vues métier
+  - Optimisation requêtes SQL
+  - Technologies: SQLite, SQL, MERISE
+
+================================================================================
+FORMATION & CERTIFICATIONS
+================================================================================
+
+MASTER RECHERCHE EN LINGUISTIQUE | 2014
+- Spécialisation: Morphosyntaxe et sémantique fonctionnelle
+- Mémoire de recherche sur l'article et les médiatifs
+- Étude des paradigmes de programmation et logique des prédicats
+- Analyse formelle des langages
+
+CERTIFICATIONS PROFESSIONNELLES
+- AI Workflow (IBM) - Machine Learning et déploiement
+- FullStack Developer Capstone (IBM) - Développement full-stack
+- Biostatistics & Medical Modeling - Modélisation statistique médicale
+
+================================================================================
+COMPÉTENCES TRANSFÉRABLES
+================================================================================
+
+- Rigueur & Méthodologie: Planification systématique issue de l'enseignement
+- Gestion de Projet: Expérience managériale et gestion d'infrastructures critiques
+- Résolution de Problèmes: Approche analytique et debugging méthodique
+- Adaptation & Apprentissage Continu: Veille technologique active
+- Communication: Vulgarisation technique et formation d'équipes
+- Leadership: Management d'équipes et coordination de projets
+
+================================================================================
+OBJECTIFS PROFESSIONNELS
+================================================================================
+
+Passionné par l'architecture de systèmes distribués et l'optimisation algorithmique. Recherche de projets à grande échelle dans des secteurs à fort impact: Infrastructures hospitalières, Intelligence Artificielle, Spatial, Nucléaire, Impact social. Motivation pour résoudre des problèmes complexes qui stimulent l'innovation et font progresser la société.
+
+================================================================================
+LANGUES
+================================================================================
+
+Français: Langue maternelle
+Anglais: Professionnel (technique)
+
+================================================================================
+MOTS-CLÉS TECHNIQUES
+================================================================================
+
+Python, Backend Development, Machine Learning, FastAPI, PyTorch, Rust, REST API, Microservices, PostgreSQL, SQL Server, Docker, Kubernetes, MLOps, Deep Learning, TensorFlow, Scikit-learn, ONNX, JWT, OAuth, SQLAlchemy, Entity Framework, ASP.NET Core, TypeScript, React, Git, CI/CD, Test-Driven Development, Agile, SOLID Principles, Design Patterns, Performance Optimization, Distributed Systems, Medical AI, RAG, LangChain, Vector Databases, DevOps, Infrastructure as Code, Cloud Architecture, System Design
