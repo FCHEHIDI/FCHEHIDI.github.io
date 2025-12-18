@@ -1,7 +1,7 @@
 # Fares CHEHIDI
 ## Backend Developer Python | ML Engineer
 
-📧 [email] | 📱 [téléphone] | 🔗 [LinkedIn] | 💻 [GitHub: FCHEHIDI](https://github.com/FCHEHIDI)
+📧 fareschehidi7@gmail.com | 📱 +33 7 87 86 40 41 | 🔗 [LinkedIn](https://www.linkedin.com/in/fares-chehidi) | 💻 [GitHub: FCHEHIDI](https://github.com/FCHEHIDI)
 
 ---
 
