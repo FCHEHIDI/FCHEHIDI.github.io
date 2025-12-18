@@ -7,7 +7,7 @@
     <style>
         @page {
             size: A4;
-            margin: 1.5cm;
+            margin: 1.2cm;
         }
         
         * {
@@ -18,62 +18,55 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            line-height: 1.4;
             color: #333;
             max-width: 210mm;
             margin: 0 auto;
             background: white;
-            padding: 20px;
+            padding: 15px;
+            font-size: 12px;
         }
         
         h1 {
             color: #2c3e50;
-            font-size: 28px;
-            margin-bottom: 5px;
+            font-size: 24px;
+            margin-bottom: 3px;
             border-bottom: 3px solid #3498db;
-            padding-bottom: 8px;
+            padding-bottom: 5px;
         }
         
         h2 {
             color: #3498db;
-            font-size: 18px;
-            margin-top: 20px;
-            margin-bottom: 12px;
+            font-size: 15px;
+            margin-top: 12px;
+            margin-bottom: 8px;
             border-left: 4px solid #3498db;
-            padding-left: 10px;
+            padding-left: 8px;
         }
         
         h3 {
             color: #2c3e50;
-            font-size: 15px;
-            margin-top: 12px;
-            margin-bottom: 6px;
-            font-weight: 600;
-        }
-        
-        h4 {
-            color: #555;
             font-size: 13px;
             margin-top: 8px;
             margin-bottom: 4px;
-            font-style: italic;
+            font-weight: 600;
         }
         
         p {
-            margin-bottom: 8px;
+            margin-bottom: 5px;
             text-align: justify;
-            font-size: 14px;
+            font-size: 12px;
         }
         
         ul {
-            margin-left: 20px;
-            margin-bottom: 10px;
+            margin-left: 18px;
+            margin-bottom: 6px;
         }
         
         li {
-            margin-bottom: 5px;
-            line-height: 1.4;
-            font-size: 13px;
+            margin-bottom: 3px;
+            line-height: 1.3;
+            font-size: 11.5px;
         }
         
         strong {
@@ -86,29 +79,23 @@
             text-decoration: none;
         }
         
-        hr {
-            border: none;
-            border-top: 1px solid #ddd;
-            margin: 15px 0;
-        }
-        
         .header {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 12px;
         }
         
         .contact-info {
             text-align: center;
-            font-size: 13px;
+            font-size: 11px;
             color: #555;
-            margin-bottom: 15px;
+            margin-bottom: 8px;
         }
         
         .profile-section {
             background: #f8f9fa;
-            padding: 12px;
-            border-radius: 5px;
-            margin: 15px 0;
+            padding: 8px;
+            border-radius: 4px;
+            margin: 10px 0;
             border-left: 4px solid #3498db;
         }
         
@@ -116,27 +103,27 @@
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
         }
         
         .period {
             color: #666;
-            font-size: 13px;
+            font-size: 11px;
             font-style: italic;
         }
         
         .tech-stack {
             background: #e8f4f8;
             color: #2c3e50;
-            padding: 2px 6px;
+            padding: 1px 4px;
             border-radius: 3px;
-            font-size: 12px;
+            font-size: 10.5px;
             font-weight: 500;
         }
         
         @media print {
             body {
-                padding: 10px;
+                padding: 8px;
             }
             
             h2 {
@@ -152,108 +139,69 @@
 <body>
     <div class="header">
         <h1>Fares CHEHIDI</h1>
-        <h2 style="text-align: center; border: none; margin-top: 5px;">Backend Developer Python | ML Engineer</h2>
+        <h2 style="text-align: center; border: none; margin-top: 3px;">Backend Developer Python | ML Engineer</h2>
         <div class="contact-info">
-            📧 <a href="mailto:fareschehidi7@gmail.com">fareschehidi7@gmail.com</a> | 📱 +33 7 87 86 40 41 | 🔗 <a href="https://www.linkedin.com/in/fares-chehidi" target="_blank">LinkedIn</a> | 💻 <a href="https://github.com/FCHEHIDI" target="_blank">GitHub</a>
+            📧 <a href="mailto:fareschehidi7@gmail.com">fareschehidi7@gmail.com</a> | 📱 +33 7 87 86 40 41 | 🌐 <a href="https://fchehidi.github.io/" target="_blank">Portfolio</a><br>
+            <a href="https://www.linkedin.com/in/fares-chehidi" target="_blank">LinkedIn</a> | <a href="https://github.com/FCHEHIDI" target="_blank">GitHub</a>
         </div>
     </div>
 
     <div class="profile-section">
         <h2 style="margin-top: 0;">🎯 PROFIL</h2>
-        <p>Backend developer Python spécialisé en optimisation de systèmes et ML. Formé en linguistique et logique des prédicats. Dernier projet : diarization vocale (PyTorch/FastAPI + serveur Rust). Passionné par l'architecture distribuée et les projets à impact technologique/social.</p>
+        <p>Backend developer Python spécialisé en ML et optimisation système. Dernier projet : diarization vocale (PyTorch/FastAPI + Rust/Axum). Passionné par l'architecture distribuée et projets à impact.</p>
     </div>
 
     <h2>💼 EXPÉRIENCES PROFESSIONNELLES</h2>
 
-    <h3>Développeur Backend Python | Indépendant</h3>
+    <h3>Développeur Backend Python & ML Engineer | Indépendant</h3>
     <div class="job-title">
         <span><strong>Janvier 2025 - Présent</strong></span>
         <span class="period">Remote</span>
     </div>
-    <p><strong>Projets & Réalisations :</strong></p>
     <ul>
-        <li><strong>VoiceFlow Intelligence Platform</strong> 🎙️ - Diarization vocale temps réel avec PyTorch/FastAPI + serveur Rust (Axum/Tokio). Pipeline MLOps avec conversion ONNX, latence < 100ms. <span class="tech-stack">Python, Rust, PyTorch, FastAPI, ONNX</span></li>
-        <li><strong>API Internal Tools Management</strong> 🔧 - API REST microservices avec PostgreSQL (PLpgSQL) et dashboard React/TypeScript. <span class="tech-stack">PostgreSQL, REST API, React</span></li>
-        <li><strong>APIs Development with FastAPI</strong> 🔐 - API professionnelle avec JWT, SQLAlchemy ORM, RBAC et tests automatisés. <span class="tech-stack">Python, FastAPI, SQLAlchemy, JWT</span></li>
-        <li><strong>Load Balancer Analytics</strong> 📊 - Plateforme d'observabilité avec prédiction ML, SQL Server et dashboards Power BI. <span class="tech-stack">Python, SQL Server, ML, Power BI</span></li>
-        <li><strong>LogiTrack Backend</strong> 📦 - API ASP.NET Core avec Entity Framework, JWT et migrations automatisées. <span class="tech-stack">C#, ASP.NET Core, Entity Framework</span></li>
-    </ul>
-
-    <h3>Ingénieur Machine Learning | Indépendant</h3>
-    <div class="job-title">
-        <span><strong>Janvier 2025 - Présent</strong></span>
-        <span class="period">Remote</span>
-    </div>
-    <p><strong>Projets & Réalisations :</strong></p>
-    <ul>
-        <li><strong>Medical RAG Chatbot</strong> 🏥 - Chatbot médical avec RAG, LLM local et bases vectorielles. <span class="tech-stack">Python, LangChain, Vector DB</span></li>
-        <li><strong>BiostatisticsModeling</strong> 🧬 - Sélection de features pour IA médicale (cancer, maladies cardiaques) avec RFE-CV, LASSO. <span class="tech-stack">Python, Scikit-learn, Pandas</span></li>
-        <li><strong>Medical AI Classification & CT Scans Recognition</strong> 🔬 - Systèmes de diagnostic médical par Deep Learning. <span class="tech-stack">PyTorch, TensorFlow, CNN</span></li>
+        <li><strong>VoiceFlow Intelligence</strong> - Diarization vocale temps réel PyTorch/FastAPI + Rust (Axum/Tokio), pipeline MLOps ONNX, latence < 100ms</li>
+        <li><strong>Medical AI Systems</strong> - RAG chatbot médical, classification Deep Learning (CNN), sélection features (RFE-CV, LASSO) pour diagnostics</li>
+        <li><strong>APIs & Microservices</strong> - API REST FastAPI/ASP.NET Core, PostgreSQL/SQL Server, JWT/RBAC, tests automatisés, dashboards Power BI</li>
+        <li><span class="tech-stack">Python, Rust, PyTorch, FastAPI, ASP.NET Core, PostgreSQL, LangChain, ONNX, Docker</span></li>
     </ul>
 
     <h3>Directeur d'Hôtel 2★ - Hôtel Donjon Vincennes</h3>
     <div class="job-title">
         <span><strong>2020 - 2025</strong></span>
-        <span class="period">Vincennes, Paris</span>
+        <span class="period">Vincennes</span>
     </div>
     <ul>
-        <li>Digitalisation complète de l'établissement pendant la crise COVID</li>
-        <li>Refonte totale du site web et implémentation sécurité PCI DSS</li>
-        <li>Sécurisation des paiements en ligne et gestion infrastructure IT</li>
-        <li>Optimisation budgétaire et gestion d'équipe</li>
-        <li><strong>Compétences techniques acquises :</strong> Infrastructure IT, Sécurité web, Gestion de projet</li>
+        <li>Digitalisation complète : refonte site web, sécurité PCI DSS, infrastructure IT, gestion d'équipe</li>
     </ul>
 
     <h3>Professeur de Français - Ministère de l'Éducation Nationale</h3>
     <div class="job-title">
         <span><strong>2015 - 2019</strong></span>
-        <span class="period">Enseignement secondaire</span>
+        <span class="period">Secondaire</span>
     </div>
     <ul>
-        <li>Conception de programmes pédagogiques structurés</li>
-        <li>Adaptation aux profils particuliers (dysphasie, dyslexie)</li>
-        <li>Planification méthodique et évaluation continue</li>
-        <li><strong>Compétences transférables :</strong> Algorithmique pédagogique, Communication, Rigueur</li>
+        <li>Conception programmes pédagogiques, adaptation profils spéciaux, rigueur et méthodologie</li>
     </ul>
 
     <h2>🛠️ COMPÉTENCES TECHNIQUES</h2>
     
-    <p><strong>Langages de Programmation :</strong> <span class="tech-stack">Expert: Python</span> <span class="tech-stack">Avancé: Rust, C#, SQL</span> <span class="tech-stack">Intermédiaire: TypeScript, Java, R</span></p>
+    <p><strong>Langages :</strong> Python (Expert) • Rust, C#, SQL (Avancé) • TypeScript, Java, R</p>
     
-    <p><strong>Backend & API :</strong> FastAPI • ASP.NET Core • SQLAlchemy • Entity Framework • REST API • JWT • OAuth</p>
+    <p><strong>Backend & Databases :</strong> FastAPI, ASP.NET Core, SQLAlchemy • PostgreSQL, SQL Server • REST API, JWT, OAuth</p>
     
-    <p><strong>Bases de Données :</strong> PostgreSQL • SQL Server • SQLite • PLpgSQL • Optimisation de requêtes • Indexation</p>
+    <p><strong>ML & IA :</strong> PyTorch, TensorFlow, Scikit-learn, ONNX • LangChain, RAG, Transformers • Medical AI</p>
     
-    <p><strong>Machine Learning & IA :</strong> PyTorch • TensorFlow • Scikit-learn • ONNX • LangChain • RAG • Transformers • Medical AI</p>
-    
-    <p><strong>DevOps & Infrastructure :</strong> Docker • Docker Compose • Redis • Elasticsearch • Microservices • CI/CD</p>
-    
-    <p><strong>Architecture & Patterns :</strong> Systèmes distribués • Microservices • SOLID • Design Patterns • OOP avancée • Architecture ML</p>
-    
-    <p><strong>Performance & Optimisation :</strong> Algorithmes avancés • Analyse de complexité • Concurrence • Async/Await • Optimisation système</p>
-    
-    <p><strong>Outils & Méthodologies :</strong> Git • GitHub • MERISE (MCD/MLD) • Power BI • Jupyter • Testing (pytest, unittest)</p>
+    <p><strong>DevOps & Architecture :</strong> Docker, Redis, Microservices, CI/CD • Systèmes distribués, SOLID, Design Patterns, Async/Await</p>
 
-    <h2>📚 PROJETS COMPLÉMENTAIRES</h2>
-    <ul>
-        <li><strong>DevOps Docker Debugger</strong> - 62 bugs corrigés, 378+ tests (WordPress, Nextcloud, Mattermost)</li>
-        <li><strong>Algorithmic Design</strong> - Architecture OOP, principes SOLID, exécution concurrente</li>
-        <li><strong>Refactoring multi-langages</strong> - Python, Java, TypeScript avec best practices</li>
-        <li><strong>ModelisationSQLite3</strong> - MERISE avec contraintes, triggers, vues métier</li>
-    </ul>
+    <h2>📚 PROJETS & FORMATION</h2>
+    <p><strong>Projets :</strong> DevOps Docker Debugger (62 bugs, 378+ tests) • Algorithmic Design (OOP, SOLID) • Refactoring multi-langages • MERISE/SQLite3</p>
+    <p><strong>Master Recherche Linguistique</strong> (2014) - Logique prédicats, paradigmes programmation</p>
+    <p><strong>Certifications :</strong> AI Workflow (IBM) • FullStack Developer (IBM) • Biostatistics & Medical Modeling</p>
 
-    <h2>🎓 FORMATION</h2>
-    <p><strong>Master Recherche en Linguistique</strong> (2014) - Morphosyntaxe, sémantique, paradigmes de programmation, logique des prédicats</p>
-    <p><strong>Certifications :</strong> AI Workflow (IBM) • FullStack Developer Capstone (IBM) • Biostatistics & Medical Modeling</p>
-
-    <h2>🌟 ATOUTS</h2>
-    <p><strong>Rigueur & Méthodologie</strong> • <strong>Gestion de Projet</strong> • <strong>Résolution de Problèmes</strong> • <strong>Adaptation & Apprentissage Continu</strong> • <strong>Communication & Vulgarisation Technique</strong></p>
-
-    <h2>🎯 OBJECTIFS</h2>
-    <p>Passionné par l'architecture distribuée et l'optimisation algorithmique. Recherche projets à grande échelle : <strong>Infrastructures hospitalières • IA • Spatial • Nucléaire • Impact social</strong></p>
-
-    <h2>💬 LANGUES</h2>
-    <p><strong>Français :</strong> Langue maternelle | <strong>Anglais :</strong> Professionnel (technique)</p>
+    <h2>🎯 ATOUTS & OBJECTIFS</h2>
+    <p><strong>Soft Skills :</strong> Rigueur, Méthodologie, Gestion de projet, Résolution problèmes, Communication technique</p>
+    <p><strong>Intérêts :</strong> Architecture distribuée, optimisation algorithmique. Recherche projets grande échelle : Infrastructures hospitalières, IA, Spatial, Nucléaire</p>
+    <p><strong>Langues :</strong> Français (natif) • Anglais (professionnel technique)</p>
 
 </body>
 </html>
