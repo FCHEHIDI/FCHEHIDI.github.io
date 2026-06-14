@@ -32,19 +32,24 @@
 
   <!-- HERO -->
   <section id="hero" aria-label="Introduction">
-    <div class="section-inner">
-      <p class="hero-eyebrow">Fares Chehidi</p>
-      <h1 class="hero-title">
-        Engineer exploring<br>
-        how systems <em>learn,</em><br>
-        converge, and evolve.
-      </h1>
-      <p class="hero-tagline">
-        I build backends, infrastructure, and tools&nbsp;&mdash; with clarity, structure, and intention.
-      </p>
-      <div class="hero-actions">
-        <a href="#projects" class="btn-primary">View Projects</a>
-        <a href="#contact" class="btn-ghost">Get in Touch</a>
+    <div class="section-inner hero-layout">
+      <div class="hero-text">
+        <p class="hero-eyebrow">Fares Chehidi</p>
+        <h1 class="hero-title">
+          Engineer exploring<br>
+          how systems <em>learn,</em><br>
+          converge, and evolve.
+        </h1>
+        <p class="hero-tagline">
+          Backend engineer. Builder of systems with clarity, structure, and intention.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary">View Projects</a>
+          <a href="#contact" class="btn-ghost">Get in Touch</a>
+        </div>
+      </div>
+      <div class="hero-portrait" aria-hidden="true">
+        <img src="assets/photo.jpg" alt="Fares Chehidi" class="portrait-img" onerror="this.parentElement.style.display='none'" />
       </div>
     </div>
   </section>
@@ -54,18 +59,40 @@
     <div class="section-inner reveal">
       <p class="section-label">About</p>
       <div class="section-divider"></div>
-      <h2 class="section-title">I build systems&nbsp;&mdash;<br>technical and human.</h2>
+      <h2 class="section-title">From predicates to systems&nbsp;&mdash;<br>a path through structure.</h2>
       <div class="about-body">
         <p>
-          Backend engineer with a focus on Python, Rust, and Go. I design APIs,
-          distributed systems, and developer tooling that are explicit, resilient,
-          and purposeful.
+          I started as a French teacher, building pedagogical programs and adapting
+          to every learner &mdash; each lesson was already an algorithm. Then I ran a
+          hotel for five years through COVID: full digitalization, payment security,
+          operational systems from scratch.
         </p>
         <p>
-          I&rsquo;m drawn to the intersection of engineering and architecture &mdash; how the
-          shape of a system encodes its assumptions, and how clarity of structure
-          enables everything that comes after.
+          The turning point came when I realized I was building <em>semantic circuits</em> &mdash;
+          tracing signal through hardware, OS, processes, code. That moment made me
+          a developer. I went back to what I&rsquo;d studied in my linguistics master:
+          programming paradigms, predicate logic, formal systems.
         </p>
+        <p>
+          Today I&rsquo;m a backend engineer focused on Python, Rust, and Go. I design APIs,
+          distributed systems, and tooling that are explicit, observable, and purposeful.
+          I&rsquo;m drawn to the places where engineering meets architecture &mdash; where the
+          shape of a system encodes its assumptions.
+        </p>
+      </div>
+      <div class="about-timeline">
+        <div class="timeline-item">
+          <span class="timeline-year">2015&ndash;19</span>
+          <span class="timeline-role">French Teacher &mdash; Minist&egrave;re de l&rsquo;&Eacute;ducation Nationale</span>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2020&ndash;25</span>
+          <span class="timeline-role">Hotel Director &mdash; H&ocirc;tel Donjon Vincennes, Paris</span>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-year">2025&ndash;</span>
+          <span class="timeline-role">Backend Engineer &mdash; Python &middot; Rust &middot; Go</span>
+        </div>
       </div>
       <div class="about-stack">
         <span class="tag">Python</span>
@@ -226,17 +253,45 @@
         Notes on systems, learning, and engineering.
       </p>
       <div class="articles-list">
+
         <div class="article-card">
-          <span class="article-meta">Essay</span>
+          <span class="article-meta">Essay &middot; Systems</span>
           <p class="article-title">
             Internal Didactics&nbsp;&mdash; How a System Learns to Understand Itself
           </p>
           <p class="article-description">
-            On metacognition in engineered systems&nbsp;&mdash; how structure enables
-            self-correction, and why the shape of a system encodes its assumptions.
+            On metacognition in engineered systems: how structure enables self-correction,
+            and why the shape of a system encodes its assumptions about the world.
           </p>
           <span class="article-badge">Coming soon</span>
         </div>
+
+        <div class="article-card">
+          <span class="article-meta">Note &middot; Engineering</span>
+          <p class="article-title">
+            Why Explicit Systems Beat Clever Ones
+          </p>
+          <p class="article-description">
+            Clever code optimizes for the writer. Explicit code optimizes for the
+            next person &mdash; including yourself six months from now. A case for
+            boring, readable, resilient design.
+          </p>
+          <span class="article-badge">Coming soon</span>
+        </div>
+
+        <div class="article-card">
+          <span class="article-meta">Reflection &middot; Career</span>
+          <p class="article-title">
+            From Predicate Logic to Production Systems
+          </p>
+          <p class="article-description">
+            What a linguistics master taught me about software architecture &mdash;
+            and why the gap between formal language theory and backend engineering
+            is smaller than it looks.
+          </p>
+          <span class="article-badge">Coming soon</span>
+        </div>
+
       </div>
     </div>
   </section>
