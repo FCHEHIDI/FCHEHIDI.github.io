@@ -1,0 +1,67 @@
+[
+  {
+    "slug": "cleanink-oncall",
+    "name": "CleanInk OnCall",
+    "short_name": "CleanInk",
+    "role": "Backend & Systems Design",
+    "summary": "On-call and incident management SaaS focused on clarity, escalation flows, and operational resilience.",
+    "description": "CleanInk OnCall is a SaaS platform for managing alerts, rotations, and incident workflows. The focus is on predictable escalation paths, clear ownership, and reducing cognitive load during high-pressure events.",
+    "stack": ["Python", "FastAPI", "PostgreSQL", "Redis", "Docker", "Kubernetes"],
+    "tags": ["SaaS", "On-call", "Backend", "Systems"],
+    "github_url": "https://github.com/fchehidi/cleanink-oncall",
+    "status": "placeholder",
+    "highlight": true
+  },
+  {
+    "slug": "vidyutor-reactor",
+    "name": "Vidyutor Reactor",
+    "short_name": "Vidyutor",
+    "role": "Rust Systems Engineer",
+    "summary": "High-performance compute reactor in Rust for structured, concurrent workloads.",
+    "description": "Vidyutor Reactor explores how to orchestrate concurrent, CPU-bound workloads in Rust with a focus on determinism, observability, and composable execution graphs.",
+    "stack": ["Rust", "Tokio", "Tracing", "WASM (planned)"],
+    "tags": ["Rust", "HPC", "Concurrency", "Systems"],
+    "github_url": "https://github.com/fchehidi/vidyutor-reactor",
+    "status": "placeholder",
+    "highlight": true
+  },
+  {
+    "slug": "kolizeum-gateway",
+    "name": "Kolizeum API Gateway",
+    "short_name": "Kolizeum",
+    "role": "Backend & Infra",
+    "summary": "High-performance API gateway focused on routing, observability, and resilience.",
+    "description": "Kolizeum is an API gateway experiment around structured routing, rate limiting, and observability. The goal is to treat traffic as a system to be shaped, not just forwarded.",
+    "stack": ["Go", "gRPC", "Docker", "Nginx (edge)"],
+    "tags": ["API Gateway", "Go", "Infrastructure"],
+    "github_url": "https://github.com/fchehidi/kolizeum-gateway",
+    "status": "placeholder",
+    "highlight": true
+  },
+  {
+    "slug": "ledgermind-saas",
+    "name": "LedgerMind",
+    "short_name": "LedgerMind",
+    "role": "Backend & Orchestration",
+    "summary": "Accounting automation SaaS exploring structured workflows and reconciliation logic.",
+    "description": "LedgerMind is a SaaS concept around automating accounting flows, reconciliation, and reporting. The focus is on explicit invariants, auditability, and clear data flows.",
+    "stack": [".NET", "C#", "SQL", "Azure"],
+    "tags": ["SaaS", "Accounting", "Automation"],
+    "github_url": "https://github.com/fchehidi/ledgermind",
+    "status": "placeholder",
+    "highlight": false
+  },
+  {
+    "slug": "northledger-ai",
+    "name": "NorthLedger",
+    "short_name": "NorthLedger",
+    "role": "AI Systems & Product",
+    "summary": "AI-assisted financial analysis with structured prompts and explainable flows.",
+    "description": "NorthLedger explores how AI can support financial analysis without becoming a black box. The focus is on structured prompts, explicit reasoning steps, and explainable outputs.",
+    "stack": ["TypeScript", "Next.js", "LangChain", "PostgreSQL"],
+    "tags": ["AI", "Finance", "Product"],
+    "github_url": "https://github.com/fchehidi/northledger",
+    "status": "placeholder",
+    "highlight": false
+  }
+]

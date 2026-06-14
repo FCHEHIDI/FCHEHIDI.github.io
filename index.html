@@ -1,646 +1,297 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fares Chehidi - Backend Developer Python | ML Engineer - Portfolio professionnel">
-    <meta name="keywords" content="Backend Developer, Python, Machine Learning, FastAPI, PyTorch, Rust, Portfolio">
-    <meta name="author" content="Fares Chehidi">
-    <title>Fares CHEHIDI | Backend Developer Python & ML Engineer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --matrix-green: #00ff41;
-            --matrix-dark-green: #008f11;
-            --matrix-light-green: #39ff14;
-            --neon-green: #0fff50;
-            --dark-bg: #0a0e0a;
-            --darker-bg: #000000;
-            --grid-color: rgba(0, 255, 65, 0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Share Tech Mono', monospace;
-            background: var(--darker-bg);
-            color: var(--matrix-green);
-            line-height: 1.6;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Matrix Rain Background */
-        #matrix-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            opacity: 0.15;
-            pointer-events: none;
-        }
-
-        /* Grid Background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(var(--grid-color) 1px, transparent 1px),
-                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-            background-size: 50px 50px;
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Header / Banner */
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, rgba(0, 20, 0, 0.95), rgba(0, 50, 0, 0.85));
-            border: 2px solid var(--matrix-green);
-            border-radius: 10px;
-            margin-bottom: 40px;
-            box-shadow: 0 0 30px rgba(0, 255, 65, 0.3);
-            animation: glowPulse 3s ease-in-out infinite;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .banner-image {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            border: 1px solid var(--matrix-dark-green);
-            box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
-        }
-
-        h1 {
-            font-family: 'Orbitron', monospace;
-            font-size: 3em;
-            font-weight: 900;
-            color: var(--neon-green);
-            text-shadow: 0 0 20px var(--matrix-green), 0 0 40px var(--matrix-green);
-            margin-bottom: 10px;
-            animation: textGlow 2s ease-in-out infinite alternate;
-        }
-
-        .tagline {
-            font-size: 1.3em;
-            color: var(--matrix-light-green);
-            text-shadow: 0 0 10px var(--matrix-green);
-            margin-bottom: 20px;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .contact-link {
-            display: inline-block;
-            padding: 10px 20px;
-            background: rgba(0, 255, 65, 0.1);
-            border: 1px solid var(--matrix-green);
-            border-radius: 5px;
-            color: var(--matrix-green);
-            text-decoration: none;
-            transition: all 0.3s;
-            font-family: 'Orbitron', monospace;
-            font-weight: 500;
-        }
-
-        .contact-link:hover {
-            background: var(--matrix-green);
-            color: var(--darker-bg);
-            box-shadow: 0 0 20px var(--matrix-green);
-            transform: translateY(-2px);
-        }
-
-        /* Section Styling */
-        .section {
-            background: linear-gradient(135deg, rgba(0, 30, 0, 0.8), rgba(0, 20, 0, 0.9));
-            border: 2px solid var(--matrix-dark-green);
-            border-radius: 10px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
-            transition: all 0.3s;
-        }
-
-        .section:hover {
-            border-color: var(--matrix-green);
-            box-shadow: 0 0 30px rgba(0, 255, 65, 0.4);
-        }
-
-        h2 {
-            font-family: 'Orbitron', monospace;
-            font-size: 2em;
-            font-weight: 700;
-            color: var(--neon-green);
-            text-shadow: 0 0 15px var(--matrix-green);
-            margin-bottom: 20px;
-            border-left: 5px solid var(--matrix-green);
-            padding-left: 15px;
-        }
-
-        h3 {
-            font-family: 'Orbitron', monospace;
-            font-size: 1.4em;
-            font-weight: 500;
-            color: var(--matrix-light-green);
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        .profile-text {
-            font-size: 1.1em;
-            line-height: 1.8;
-            color: rgba(0, 255, 65, 0.9);
-        }
-
-        /* Job/Project Cards */
-        .job-card, .project-card {
-            background: rgba(0, 50, 0, 0.3);
-            border: 1px solid var(--matrix-dark-green);
-            border-left: 4px solid var(--matrix-green);
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            transition: all 0.3s;
-        }
-
-        .job-card:hover, .project-card:hover {
-            background: rgba(0, 70, 0, 0.4);
-            border-left-color: var(--neon-green);
-            transform: translateX(10px);
-        }
-
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            flex-wrap: wrap;
-            margin-bottom: 10px;
-        }
-
-        .job-title {
-            font-family: 'Orbitron', monospace;
-            font-weight: 700;
-            font-size: 1.2em;
-            color: var(--matrix-light-green);
-        }
-
-        .job-period {
-            color: rgba(0, 255, 65, 0.7);
-            font-style: italic;
-        }
-
-        .tech-stack {
-            display: inline-block;
-            background: rgba(0, 255, 65, 0.15);
-            color: var(--matrix-green);
-            padding: 4px 10px;
-            border-radius: 3px;
-            margin: 3px;
-            font-size: 0.9em;
-            border: 1px solid var(--matrix-dark-green);
-        }
-
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        li {
-            padding-left: 25px;
-            position: relative;
-            margin-bottom: 10px;
-            color: rgba(0, 255, 65, 0.85);
-        }
-
-        li::before {
-            content: '>';
-            position: absolute;
-            left: 0;
-            color: var(--matrix-green);
-            font-weight: bold;
-        }
-
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .skill-category {
-            background: rgba(0, 50, 0, 0.3);
-            padding: 15px;
-            border-radius: 5px;
-            border: 1px solid var(--matrix-dark-green);
-        }
-
-        .skill-category h4 {
-            font-family: 'Orbitron', monospace;
-            color: var(--matrix-light-green);
-            margin-bottom: 10px;
-            font-size: 1.1em;
-        }
-
-        .skill-category p {
-            color: rgba(0, 255, 65, 0.8);
-            font-size: 0.95em;
-        }
-
-        /* Style pour les emojis en vert néon */
-        .emoji {
-            color: var(--neon-green);
-            text-shadow: 0 0 10px var(--matrix-green), 0 0 20px var(--matrix-green), 0 0 30px var(--neon-green);
-            font-size: 1.2em;
-            font-weight: bold;
-            display: inline-block;
-            margin-right: 5px;
-            animation: emojiGlow 2s ease-in-out infinite alternate;
-        }
-
-        /* Animations */
-        @keyframes glowPulse {
-            0%, 100% { box-shadow: 0 0 30px rgba(0, 255, 65, 0.3); }
-            50% { box-shadow: 0 0 50px rgba(0, 255, 65, 0.5); }
-        }
-
-        @keyframes textGlow {
-            from { text-shadow: 0 0 20px var(--matrix-green), 0 0 40px var(--matrix-green); }
-            to { text-shadow: 0 0 30px var(--neon-green), 0 0 60px var(--neon-green); }
-        }
-
-        @keyframes emojiGlow {
-            from { text-shadow: 0 0 10px var(--matrix-green), 0 0 20px var(--matrix-green); }
-            to { text-shadow: 0 0 15px var(--neon-green), 0 0 30px var(--neon-green), 0 0 40px var(--matrix-light-green); }
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            color: rgba(0, 255, 65, 0.6);
-            border-top: 1px solid var(--matrix-dark-green);
-            margin-top: 50px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            h1 { font-size: 2em; }
-            h2 { font-size: 1.5em; }
-            .contact-links { flex-direction: column; align-items: center; }
-            .job-header { flex-direction: column; }
-            .skills-grid { grid-template-columns: 1fr; }
-        }
-
-        /* Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--darker-bg);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--matrix-dark-green);
-            border-radius: 5px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--matrix-green);
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Fares Chehidi — Engineer exploring how systems learn, converge, and evolve." />
+  <meta name="author" content="Fares Chehidi" />
+  <meta property="og:title" content="Fares Chehidi — Systems Engineer" />
+  <meta property="og:description" content="Backend engineer building systems with clarity, structure, and intention." />
+  <meta property="og:type" content="website" />
+  <title>Fares Chehidi — Systems Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <canvas id="matrix-canvas"></canvas>
 
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <img src="assets/bannière_de_mon_cv.png" alt="Fares Chehidi Banner" class="banner-image">
-            <h1>FARES CHEHIDI</h1>
-            <p class="tagline">Backend Developer Python | ML Engineer</p>
-            <div class="contact-links">
-                <a href="mailto:fareschehidi7@gmail.com" class="contact-link"><span class="emoji">✉</span> Email</a>
-                <a href="tel:+33787864041" class="contact-link"><span class="emoji">☎</span> +33 7 87 86 40 41</a>
-                <a href="https://www.linkedin.com/in/fares-chehidi" target="_blank" class="contact-link"><span class="emoji">▶</span> LinkedIn</a>
-                <a href="https://github.com/FCHEHIDI" target="_blank" class="contact-link"><span class="emoji">⚙</span> GitHub</a>
-            </div>
-        </header>
+<nav id="nav" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-brand">FC</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#writing">Writing</a></li>
+      <li><a href="#contact" class="nav-cta">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-        <!-- Profile -->
-        <section class="section">
-            <h2>$ whoami</h2>
-            <p class="profile-text">
-                Quand j'étais prof de français <span class="emoji">▣</span>, je construisais déjà des programmes pédagogiques et j'adaptais mes contenus pour des profils d'élèves particuliers. Puis j'ai dirigé un hôtel pendant 5 ans <span class="emoji">▦</span>, où la digitalisation totale et l'implémentation PCI DSS m'ont fait redécouvrir ma passion pour la programmation.
-            </p>
-            <p class="profile-text">
-                Le déclic <span class="emoji">◈</span> : comprendre que je construisais littéralement des circuits sémantiques pour conduire le signal dans le CPU.
-            </p>
-            <p class="profile-text">
-                Aujourd'hui, backend developer spécialisé Python <span class="emoji">◉</span>, je structure et optimise des systèmes. Mon dernier projet : système de diarization vocale avec PyTorch/FastAPI pour le ML, et serveur d'inférence Rust (Axum/Tokio).
-            </p>
-            <p class="profile-text">
-                De mes expériences précédentes, j'ai gardé la rigueur, la planification méthodique et la capacité à anticiper. Je rêve de contribuer à des projets à grande échelle : infrastructures hospitalières <span class="emoji">◢</span>, IA <span class="emoji">◣</span>, spatial <span class="emoji">◤</span>.
-            </p>
-        </section>
+<main>
 
-        <!-- Objectives -->
-        <section class="section">
-            <h2>$ echo $GOALS</h2>
-            <p class="profile-text">
-                Passionné par l'architecture distribuée et l'optimisation algorithmique. 
-                Recherche projets à grande échelle : <strong>Infrastructures hospitalières • IA • Spatial • Nucléaire • Impact social</strong>
-            </p>
-        </section>
-
-        <!-- Skills -->
-        <section class="section">
-            <h2>$ ls -la skills/</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h4>Langages</h4>
-                    <p><strong>Expert:</strong> Python<br>
-                    <strong>Avancé:</strong> Rust, C#, SQL<br>
-                    <strong>Intermédiaire:</strong> TypeScript, Java, R</p>
-                </div>
-                <div class="skill-category">
-                    <h4>Backend & API</h4>
-                    <p>FastAPI • ASP.NET Core • SQLAlchemy • Entity Framework • REST API • JWT • OAuth</p>
-                </div>
-                <div class="skill-category">
-                    <h4>Bases de Données</h4>
-                    <p>PostgreSQL • SQL Server • SQLite • PLpgSQL • Optimisation • Indexation</p>
-                </div>
-                <div class="skill-category">
-                    <h4>Machine Learning & IA</h4>
-                    <p>PyTorch • TensorFlow • Scikit-learn • ONNX • LangChain • RAG • Transformers</p>
-                </div>
-                <div class="skill-category">
-                    <h4>DevOps & Infrastructure</h4>
-                    <p>Docker • Docker Compose • Redis • Elasticsearch • Microservices • CI/CD</p>
-                </div>
-                <div class="skill-category">
-                    <h4>Architecture & Patterns</h4>
-                    <p>Systèmes distribués • Microservices • SOLID • Design Patterns • OOP</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience -->
-        <section class="section">
-            <h2>$ cat experience.log</h2>
-            
-            <div class="job-card">
-                <div class="job-header">
-                    <h3 class="job-title">Développeur Backend Python | Indépendant</h3>
-                    <span class="job-period">Jan 2025 - Présent</span>
-                </div>
-                <ul>
-                    <li><strong>VoiceFlow Intelligence Platform</strong> - Diarization vocale temps réel avec PyTorch/FastAPI + serveur Rust (Axum/Tokio). Pipeline MLOps avec conversion ONNX, latence < 100ms.
-                        <div><span class="tech-stack">Python</span><span class="tech-stack">Rust</span><span class="tech-stack">PyTorch</span><span class="tech-stack">FastAPI</span><span class="tech-stack">ONNX</span></div>
-                    </li>
-                    <li><strong>API Internal Tools Management</strong> - API REST microservices avec PostgreSQL (PLpgSQL) et dashboard React/TypeScript.
-                        <div><span class="tech-stack">PostgreSQL</span><span class="tech-stack">REST API</span><span class="tech-stack">React</span></div>
-                    </li>
-                    <li><strong>APIs Development with FastAPI</strong> - API professionnelle avec JWT, SQLAlchemy ORM, RBAC et tests automatisés.
-                        <div><span class="tech-stack">Python</span><span class="tech-stack">FastAPI</span><span class="tech-stack">SQLAlchemy</span><span class="tech-stack">JWT</span></div>
-                    </li>
-                    <li><strong>Load Balancer Analytics</strong> - Plateforme d'observabilité avec prédiction ML, SQL Server et dashboards Power BI.
-                        <div><span class="tech-stack">Python</span><span class="tech-stack">SQL Server</span><span class="tech-stack">ML</span><span class="tech-stack">Power BI</span></div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="job-card">
-                <div class="job-header">
-                    <h3 class="job-title">Ingénieur Machine Learning | Indépendant</h3>
-                    <span class="job-period">Jan 2025 - Présent</span>
-                </div>
-                <ul>
-                    <li><strong>Medical RAG Chatbot</strong> - Chatbot médical avec RAG, LLM local et bases vectorielles.
-                        <div><span class="tech-stack">Python</span><span class="tech-stack">LangChain</span><span class="tech-stack">Vector DB</span></div>
-                    </li>
-                    <li><strong>BiostatisticsModeling</strong> - Sélection de features pour IA médicale avec RFE-CV, LASSO.
-                        <div><span class="tech-stack">Python</span><span class="tech-stack">Scikit-learn</span><span class="tech-stack">Pandas</span></div>
-                    </li>
-                    <li><strong>Medical AI Classification</strong> - Systèmes de diagnostic médical par Deep Learning.
-                        <div><span class="tech-stack">PyTorch</span><span class="tech-stack">TensorFlow</span><span class="tech-stack">CNN</span></div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="job-card">
-                <div class="job-header">
-                    <h3 class="job-title">Directeur d'Hôtel 2★ | Hôtel Donjon Vincennes</h3>
-                    <span class="job-period">2020 - 2025</span>
-                </div>
-                <ul>
-                    <li>Digitalisation complète de l'établissement pendant la crise COVID</li>
-                    <li>Implémentation sécurité PCI DSS et gestion infrastructure IT</li>
-                    <li>Optimisation budgétaire et management d'équipe</li>
-                </ul>
-            </div>
-
-            <div class="job-card">
-                <div class="job-header">
-                    <h3 class="job-title">Professeur de Français | Ministère de l'Éducation Nationale</h3>
-                    <span class="job-period">2015 - 2019</span>
-                </div>
-                <ul>
-                    <li>Conception de programmes pédagogiques structurés</li>
-                    <li>Adaptation aux profils particuliers (dysphasie, dyslexie)</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Projects -->
-        <section class="section">
-            <h2>$ git log --projects</h2>
-            <div class="project-card">
-                <h3>DevOps Docker Debugger</h3>
-                <p>Challenge de debugging avec 62 bugs corrigés, 378+ tests (WordPress, Nextcloud, Mattermost)</p>
-            </div>
-            <div class="project-card">
-                <h3>Algorithmic Design</h3>
-                <p>Architecture OOP, principes SOLID, exécution concurrente</p>
-            </div>
-            <div class="project-card">
-                <h3>Refactoring Multi-langages</h3>
-                <p>Python, Java, TypeScript avec best practices</p>
-            </div>
-            <div class="project-card">
-                <h3>ModelisationSQLite3</h3>
-                <p>MERISE avec contraintes, triggers, vues métier</p>
-            </div>
-        </section>
-
-        <!-- Education -->
-        <section class="section">
-            <h2>$ cat education.txt</h2>
-            <div class="job-card">
-                <h3>Master Recherche en Linguistique (2014)</h3>
-                <p>Morphosyntaxe, sémantique, paradigmes de programmation, logique des prédicats</p>
-            </div>
-            <div class="job-card">
-                <h3>Certifications</h3>
-                <p>AI Workflow (IBM) • FullStack Developer Capstone (IBM) • Biostatistics & Medical Modeling</p>
-            </div>
-        </section>
-
-        <!-- Languages -->
-        <section class="section">
-            <h2>$ locale</h2>
-            <p class="profile-text">
-                <strong>Français:</strong> Langue maternelle<br>
-                <strong>Anglais:</strong> Professionnel (technique)
-            </p>
-        </section>
+  <!-- HERO -->
+  <section id="hero" aria-label="Introduction">
+    <div class="section-inner">
+      <p class="hero-eyebrow">Fares Chehidi</p>
+      <h1 class="hero-title">
+        Engineer exploring<br>
+        how systems <em>learn,</em><br>
+        converge, and evolve.
+      </h1>
+      <p class="hero-tagline">
+        I build backends, infrastructure, and tools&nbsp;&mdash; with clarity, structure, and intention.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="#contact" class="btn-ghost">Get in Touch</a>
+      </div>
     </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 Fares CHEHIDI | Built with Matrix vibes <span class="emoji">●</span></p>
-        <p style="font-size: 0.8em; margin-top: 10px;">Wake up, Neo...</p>
-    </footer>
+  <!-- ABOUT -->
+  <section id="about" aria-label="About">
+    <div class="section-inner reveal">
+      <p class="section-label">About</p>
+      <div class="section-divider"></div>
+      <h2 class="section-title">I build systems&nbsp;&mdash;<br>technical and human.</h2>
+      <div class="about-body">
+        <p>
+          Backend engineer with a focus on Python, Rust, and Go. I design APIs,
+          distributed systems, and developer tooling that are explicit, resilient,
+          and purposeful.
+        </p>
+        <p>
+          I&rsquo;m drawn to the intersection of engineering and architecture &mdash; how the
+          shape of a system encodes its assumptions, and how clarity of structure
+          enables everything that comes after.
+        </p>
+      </div>
+      <div class="about-stack">
+        <span class="tag">Python</span>
+        <span class="tag">Rust</span>
+        <span class="tag">Go</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">Redis</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Kubernetes</span>
+        <span class="tag">.NET / C#</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">gRPC</span>
+      </div>
+    </div>
+  </section>
 
-    <!-- Matrix Rain Animation with Glitch Effect -->
-    <script>
-        const canvas = document.getElementById('matrix-canvas');
-        const ctx = canvas.getContext('2d');
+  <!-- PROJECTS -->
+  <section id="projects" aria-label="Projects">
+    <div class="section-inner reveal">
+      <p class="section-label">Projects</p>
+      <div class="section-divider"></div>
+      <h2 class="section-title">Things I&rsquo;m building.</h2>
+      <p class="section-description">
+        Personal explorations in systems design, distributed infrastructure, and product engineering.
+      </p>
+      <div class="projects-grid">
 
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        <a href="https://github.com/FCHEHIDI/cleanink-oncall" target="_blank" rel="noopener" class="project-card featured">
+          <div class="project-header">
+            <span class="project-name">CleanInk OnCall</span>
+            <span class="project-status">In progress</span>
+          </div>
+          <span class="project-role">Backend &amp; Systems Design</span>
+          <p class="project-description">
+            On-call and incident management SaaS focused on clarity, escalation flows,
+            and operational resilience. Predictable ownership, reduced cognitive load
+            during high-pressure events.
+          </p>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Redis</span>
+              <span class="tag">K8s</span>
+            </div>
+            <span class="project-link">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 11L11 1M11 1H4M11 1v7"/></svg>
+              GitHub
+            </span>
+          </div>
+        </a>
 
-        const katakana = 'アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズブヅプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロヲゴゾドボポヴッン';
-        const latin = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        const nums = '0123456789';
-        const symbols = '!@#$%^&*()_+-=[]{}|;:,.<>?/~`';
-        const alphabet = katakana + latin + nums + symbols;
+        <a href="https://github.com/FCHEHIDI/vidyutor-reactor" target="_blank" rel="noopener" class="project-card">
+          <div class="project-header">
+            <span class="project-name">Vidyutor Reactor</span>
+            <span class="project-status">Exploration</span>
+          </div>
+          <span class="project-role">Rust Systems Engineer</span>
+          <p class="project-description">
+            High-performance compute reactor in Rust. Deterministic, observable,
+            composable execution graphs for structured concurrent workloads.
+          </p>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="tag">Rust</span>
+              <span class="tag">Tokio</span>
+              <span class="tag">HPC</span>
+            </div>
+            <span class="project-link">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 11L11 1M11 1H4M11 1v7"/></svg>
+              GitHub
+            </span>
+          </div>
+        </a>
 
-        const fontSize = 16;
-        const columns = canvas.width / fontSize;
+        <a href="https://github.com/FCHEHIDI/kolizeum-gateway" target="_blank" rel="noopener" class="project-card">
+          <div class="project-header">
+            <span class="project-name">Kolizeum Gateway</span>
+            <span class="project-status">Exploration</span>
+          </div>
+          <span class="project-role">Backend &amp; Infra</span>
+          <p class="project-description">
+            API gateway experiment around structured routing, rate limiting,
+            and observability. Traffic as a system to be shaped, not just forwarded.
+          </p>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="tag">Go</span>
+              <span class="tag">gRPC</span>
+              <span class="tag">Docker</span>
+            </div>
+            <span class="project-link">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 11L11 1M11 1H4M11 1v7"/></svg>
+              GitHub
+            </span>
+          </div>
+        </a>
 
-        const rainDrops = [];
-        const speeds = [];
-        const brightness = [];
+        <a href="https://github.com/FCHEHIDI/ledgermind" target="_blank" rel="noopener" class="project-card">
+          <div class="project-header">
+            <span class="project-name">LedgerMind</span>
+            <span class="project-status">Concept</span>
+          </div>
+          <span class="project-role">Backend &amp; Orchestration</span>
+          <p class="project-description">
+            Accounting automation SaaS. Structured workflows, reconciliation logic,
+            explicit invariants, and auditability as a first-class concern.
+          </p>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="tag">.NET</span>
+              <span class="tag">C#</span>
+              <span class="tag">Azure</span>
+            </div>
+            <span class="project-link">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 11L11 1M11 1H4M11 1v7"/></svg>
+              GitHub
+            </span>
+          </div>
+        </a>
 
-        for (let x = 0; x < columns; x++) {
-            rainDrops[x] = Math.floor(Math.random() * canvas.height / fontSize);
-            speeds[x] = Math.random() * 0.5 + 0.5;
-            brightness[x] = Math.random();
-        }
+        <a href="https://github.com/FCHEHIDI/northledger" target="_blank" rel="noopener" class="project-card">
+          <div class="project-header">
+            <span class="project-name">NorthLedger</span>
+            <span class="project-status">Concept</span>
+          </div>
+          <span class="project-role">AI Systems &amp; Product</span>
+          <p class="project-description">
+            AI-assisted financial analysis with structured prompts and explainable
+            flows. AI that supports reasoning without becoming a black box.
+          </p>
+          <div class="project-footer">
+            <div class="project-tags">
+              <span class="tag">TypeScript</span>
+              <span class="tag">Next.js</span>
+              <span class="tag">LangChain</span>
+            </div>
+            <span class="project-link">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 11L11 1M11 1H4M11 1v7"/></svg>
+              GitHub
+            </span>
+          </div>
+        </a>
 
-        let glitchTimer = 0;
-        let isGlitching = false;
+      </div>
+    </div>
+  </section>
 
-        const draw = () => {
-            // Fade effect with slight variation
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+  <!-- WRITING -->
+  <section id="writing" aria-label="Writing">
+    <div class="section-inner reveal">
+      <p class="section-label">Writing</p>
+      <div class="section-divider"></div>
+      <h2 class="section-title">Thinking out loud.</h2>
+      <p class="section-description">
+        Notes on systems, learning, and engineering.
+      </p>
+      <div class="articles-list">
+        <div class="article-card">
+          <span class="article-meta">Essay</span>
+          <p class="article-title">
+            Internal Didactics&nbsp;&mdash; How a System Learns to Understand Itself
+          </p>
+          <p class="article-description">
+            On metacognition in engineered systems&nbsp;&mdash; how structure enables
+            self-correction, and why the shape of a system encodes its assumptions.
+          </p>
+          <span class="article-badge">Coming soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            // Random glitch effect every 3-7 seconds
-            glitchTimer++;
-            if (glitchTimer > 150 && Math.random() > 0.98) {
-                isGlitching = true;
-                glitchTimer = 0;
-                
-                // Glitch distortion
-                const glitchHeight = Math.random() * 100 + 50;
-                const glitchY = Math.random() * canvas.height;
-                ctx.drawImage(canvas, 
-                    0, glitchY, canvas.width, glitchHeight,
-                    Math.random() * 20 - 10, glitchY, canvas.width, glitchHeight
-                );
-            }
+  <!-- CONTACT -->
+  <section id="contact" aria-label="Contact">
+    <div class="section-inner reveal">
+      <p class="section-label">Contact</p>
+      <div class="section-divider"></div>
+      <h2 class="section-title">Let&rsquo;s connect.</h2>
+      <p class="section-description">
+        Open to interesting projects, conversations, and collaborations.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:fareschehidi7@gmail.com" class="contact-link">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="12" height="8" rx="1.5"/><path d="M1 4l6 4 6-4"/></svg>
+          fareschehidi7@gmail.com
+        </a>
+        <a href="https://www.linkedin.com/in/fares-chehidi" target="_blank" rel="noopener" class="contact-link">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="1" width="12" height="12" rx="2"/><path d="M4 6v4M4 4.5v.01M7 10V8a1 1 0 012 0v2M7 7v1"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/FCHEHIDI" target="_blank" rel="noopener" class="contact-link">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1.5A5.5 5.5 0 001.5 7c0 2.43 1.57 4.49 3.75 5.22.27.05.37-.12.37-.26v-.93c-1.52.33-1.84-.73-1.84-.73-.25-.63-.61-.8-.61-.8-.5-.34.04-.33.04-.33.55.04.84.56.84.56.49.84 1.28.6 1.59.46.05-.36.19-.6.35-.74-1.21-.14-2.49-.61-2.49-2.7 0-.6.21-1.08.56-1.47-.06-.14-.24-.7.05-1.45 0 0 .46-.15 1.5.56a5.2 5.2 0 011.37-.18c.46 0 .93.06 1.37.18 1.04-.71 1.5-.56 1.5-.56.3.75.11 1.31.05 1.45.35.39.56.88.56 1.47 0 2.1-1.28 2.56-2.5 2.69.2.17.37.5.37 1.01v1.5c0 .15.1.31.38.26A5.5 5.5 0 007 1.5z"/></svg>
+          FCHEHIDI
+        </a>
+      </div>
+    </div>
+  </section>
 
-            if (isGlitching && Math.random() > 0.7) {
-                isGlitching = false;
-            }
+</main>
 
-            for (let i = 0; i < rainDrops.length; i++) {
-                // Vary brightness for depth effect
-                const greenValue = Math.floor(brightness[i] * 155 + 100);
-                const glitchOffset = isGlitching ? Math.random() * 10 - 5 : 0;
-                
-                // Occasional bright flash
-                if (Math.random() > 0.98) {
-                    ctx.fillStyle = `rgb(0, 255, ${Math.floor(Math.random() * 100)})`;
-                    brightness[i] = 1;
-                } else {
-                    ctx.fillStyle = `rgb(0, ${greenValue}, 0)`;
-                    brightness[i] = Math.max(0.3, brightness[i] - 0.01);
-                }
-                
-                ctx.font = fontSize + 'px monospace';
-                
-                const text = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-                ctx.fillText(text, i * fontSize + glitchOffset, rainDrops[i] * fontSize);
+<footer>
+  <div class="footer-inner">
+    <span>&copy; 2026 Fares Chehidi</span>
+    <span>Expressionist Geometric Systems</span>
+  </div>
+</footer>
 
-                // Add leading bright character
-                if (Math.random() > 0.975) {
-                    ctx.fillStyle = 'rgb(200, 255, 200)';
-                    ctx.fillText(
-                        alphabet.charAt(Math.floor(Math.random() * alphabet.length)),
-                        i * fontSize + glitchOffset,
-                        (rainDrops[i] - 1) * fontSize
-                    );
-                }
+<script>
+  (function () {
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add("visible"); observer.unobserve(e.target); }
+      }),
+      { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
+    );
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+    const nav = document.getElementById("nav");
+    window.addEventListener("scroll", () => {
+      nav.style.boxShadow = window.scrollY > 10 ? "0 1px 24px rgba(0,0,0,0.6)" : "none";
+    }, { passive: true });
+  })();
+</script>
 
-                // Reset drop with variable speed
-                if (rainDrops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                    rainDrops[i] = 0;
-                    speeds[i] = Math.random() * 0.5 + 0.5;
-                    brightness[i] = Math.random();
-                }
-                
-                rainDrops[i] += speeds[i];
-            }
-
-            // Occasional horizontal glitch lines
-            if (Math.random() > 0.99) {
-                const lineY = Math.random() * canvas.height;
-                ctx.fillStyle = `rgba(0, 255, 0, ${Math.random() * 0.3})`;
-                ctx.fillRect(0, lineY, canvas.width, 2);
-            }
-        };
-
-        setInterval(draw, 30);
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-    </script>
 </body>
 </html>
+
